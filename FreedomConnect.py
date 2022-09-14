@@ -20,18 +20,18 @@ pyautogui.FAILSAFE = False
 
 #Turning off a failsafe for pyautogui where it will quit if mouse goes toward edge of screen
 
-def sendMessage(packetLossPercent, reciever="regulatory"): #Sends a message to either the team, Mr. C, or Mr. McManly
-    email = "freedomconnection20152@outlook.com"
-    pas = "RaspberryPiConnect"
+def sendMessage(packetLossPercent, reciever="regulatory"): #Sends a message to the team and mentors
+    email = "################@outlook.com"
+    pas = "************"
    
     #Freedom Connect outlook account since google does not allow thrid parties to log in
    
-    if reciever == "McManly":
-        sms_gateway = '7039755911@vtext.com'
-    if reciever == "Cunningham":
-        sms_gateway = '7038500615@mms.att.net'
+    if reciever == "******":
+        sms_gateway = '###########@vtext.com'
+    if reciever == "******":
+        sms_gateway = '###########@mms.att.net'
     if reciever == "regulatory":
-        sms_gateway = '5404541602@txt.att.net' # Change number for next generation
+        sms_gateway = '###########@txt.att.net' # Change number for next generation
        
     #Sets the sms_gateway which allows an email to send a text message
 
@@ -190,21 +190,21 @@ for k in range(NumOfDays): #This for loop gives us the option to run the system 
         packetLoss = eachRow() # Runs each row and sets packetLoss equal to what ever it returns which could be a decimal or 'ERROR'
         if packetLoss != "ERROR" and float(packetLoss) <= 20.0: # Checks if the internet is doing well
             try:
-                sendMessage(float(packetLoss), "Cunningham")
+                sendMessage(float(packetLoss), "*********")
                 sendMessage(float(packetLoss))
                
                 #sends messages to the team and Mr. C
                 if float(packetLoss) > 2.5:
-                    sendMessage(float(packetLoss), "McManly")
+                    sendMessage(float(packetLoss), "**********
                    
                     #Only sends messages to Mr. McManly if the internet is doing abnormally poor
             except:
                 print("Alert Failed")
         if packetLoss == "ERROR" or float(packetLoss) > 20.0: # Checks if the internet is down or doing very poorly
             try:
-                sendMessage(100.0, "Cunningham")
+                sendMessage(100.0, "*********
                 sendMessage(100.0)
-                sendMessage(100.0, "McManly")
+                sendMessage(100.0, "*********
                
                 # sends messages to everyone
             except:
